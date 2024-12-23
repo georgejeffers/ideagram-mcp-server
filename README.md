@@ -1,6 +1,24 @@
+
+
+<div align="center">
+<img src="assets/header-animation.svg" width="100%">
+
 # 🎨 Ideogram MCP Server
 
+<p align="center">
+<img alt="GitHub" src="https://img.shields.io/github/license/sunwood-ai-labs/ideagram-mcp-server">
+<img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/sunwood-ai-labs/ideagram-mcp-server">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/sunwood-ai-labs/ideagram-mcp-server">
+<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/sunwood-ai-labs/ideagram-mcp-server">
+<img alt="npm" src="https://img.shields.io/npm/v/@sunwood-ai-labs/ideagram-mcp-server">
+<img alt="npm" src="https://img.shields.io/npm/dt/@sunwood-ai-labs/ideagram-mcp-server">
+</p>
+
+
 Ideogram APIを使用して画像生成機能を提供するModel Context Protocol (MCP) サーバー
+
+</div>
+
 
 ## 📋 機能
 

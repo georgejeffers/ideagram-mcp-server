@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 320">
+  <!-- Previous defs section remains the same -->
+  <defs>
+    <!-- Previous gradients and filters remain the same -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;">
+        <animate attributeName="stop-color" 
+          values="#1a1a1a;#2a1a3a;#3a1a4a;#2a1a3a;#1a1a1a"
+          dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="50%" style="stop-color:#2a1a3a;">
+        <animate attributeName="stop-color"
+          values="#2a1a3a;#4a1a5a;#5a1a6a;#4a1a5a;#2a1a3a"
+          dur="10s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#3a1a4a;">
+        <animate attributeName="stop-color"
+          values="#3a1a4a;#5a1a6a;#6a1a7a;#5a1a6a;#3a1a4a"
+          dur="10s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;">
+        <animate attributeName="stop-color"
+          values="#ffffff;#a0a0ff;#ffffff"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#a0a0ff;">
+        <animate attributeName="stop-color"
+          values="#a0a0ff;#ffffff;#a0a0ff"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <!-- Subtitle gradient -->
+    <linearGradient id="subtitle-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#a0a0ff;">
+        <animate attributeName="stop-color"
+          values="#a0a0ff;#ffffff;#a0a0ff"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#ffffff;">
+        <animate attributeName="stop-color"
+          values="#ffffff;#a0a0ff;#ffffff"
+          dur="6s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle glow for subtitle -->
+    <filter id="subtle-glow">
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <radialGradient id="particle" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.8)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Previous background and decorative elements remain the same -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)">
+    <animate attributeName="rx" 
+      values="20;30;40;30;20"
+      dur="8s"
+      repeatCount="indefinite"/>
+    <animate attributeName="ry" 
+      values="20;40;30;40;20"
+      dur="8s"
+      repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Background particles and decorative elements remain the same -->
+  <g>
+    <circle cx="200" cy="100" r="3" fill="url(#particle)">
+      <animate attributeName="cy"
+        values="100;80;100"
+        dur="4s"
+        repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.8;0.3;0.8"
+        dur="4s"
+        repeatCount="indefinite"/>
+    </circle>
+    <circle cx="1080" cy="220" r="3" fill="url(#particle)">
+      <animate attributeName="cy"
+        values="220;240;220"
+        dur="4s"
+        repeatCount="indefinite"/>
+      <animate attributeName="opacity"
+        values="0.8;0.3;0.8"
+        dur="4s"
+        repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Previous decorative elements remain the same -->
+  <g opacity="0.4">
+    <!-- Animated hexagons with rotation -->
+    <path d="M50,160 L90,140 L130,160 L130,200 L90,220 L50,200 Z" 
+      fill="none" 
+      stroke="#6a5acd" 
+      stroke-width="2">
+      <animate attributeName="stroke-dasharray"
+        values="0,1000;1000,0;0,1000"
+        dur="6s"
+        repeatCount="indefinite"/>
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 90 180"
+        to="360 90 180"
+        dur="20s"
+        repeatCount="indefinite"/>
+    </path>
+    <path d="M1150,160 L1190,140 L1230,160 L1230,200 L1190,220 L1150,200 Z"
+      fill="none"
+      stroke="#6a5acd"
+      stroke-width="2">
+      <animate attributeName="stroke-dasharray"
+        values="0,1000;1000,0;0,1000"
+        dur="6s"
+        repeatCount="indefinite"/>
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="360 1190 180"
+        to="0 1190 180"
+        dur="20s"
+        repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Main title - Adjusted position upward -->
+  <text x="50%" y="45%" 
+    text-anchor="middle" 
+    font-family="Arial, sans-serif" 
+    font-size="64" 
+    font-weight="bold" 
+    fill="url(#text-gradient)" 
+    filter="url(#glow)"
+    opacity="0.9">
+    ideagram-mcp-server
+    <animate attributeName="opacity"
+      values="0.9;1;0.9"
+      dur="3s"
+      repeatCount="indefinite"/>
+    <animateTransform
+      attributeName="transform"
+      type="scale"
+      values="1;1.02;1"
+      dur="4s"
+      repeatCount="indefinite"/>
+  </text>
+
+  <!-- New subtitle -->
+  <text x="50%" y="60%" 
+    text-anchor="middle" 
+    font-family="Arial, sans-serif" 
+    font-size="24" 
+    font-weight="normal" 
+    fill="url(#subtitle-gradient)" 
+    filter="url(#subtle-glow)"
+    opacity="0.8">
+    Model Context Protocol (MCP) Server for Image Generation with Ideogram API
+    <animate attributeName="opacity"
+      values="0.8;0.9;0.8"
+      dur="4s"
+      repeatCount="indefinite"/>
+  </text>
+
+  <!-- Previous animated lines and dots remain the same -->
+  <g stroke="#6a5acd" stroke-width="2" opacity="0.5">
+    <line x1="200" y1="40" x2="1080" y2="40">
+      <animate attributeName="x2"
+        values="1080;1100;1080"
+        dur="3s"
+        repeatCount="indefinite"/>
+      <animate attributeName="stroke-width"
+        values="2;3;2"
+        dur="3s"
+        repeatCount="indefinite"/>
+    </line>
+    <line x1="200" y1="280" x2="1080" y2="280">
+      <animate attributeName="x2"
+        values="1080;1100;1080"
+        dur="3s"
+        repeatCount="indefinite"/>
+      <animate attributeName="stroke-width"
+        values="2;3;2"
+        dur="3s"
+        repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <g>
+    <circle cx="180" cy="40" r="4" fill="#6a5acd">
+      <animate attributeName="r"
+        values="4;6;4"
+        dur="2s"
+        repeatCount="indefinite"/>
+      <animate attributeName="fill"
+        values="#6a5acd;#8a7aed;#6a5acd"
+        dur="2s"
+        repeatCount="indefinite"/>
+    </circle>
+    <circle cx="180" cy="280" r="4" fill="#6a5acd">
+      <animate attributeName="r"
+        values="4;6;4"
+        dur="2s"
+        repeatCount="indefinite"/>
+      <animate attributeName="fill"
+        values="#6a5acd;#8a7aed;#6a5acd"
+        dur="2s"
+        repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
