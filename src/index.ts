@@ -40,7 +40,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
           properties: {
             prompt: {
               type: "string",
-              description: "The prompt to use for generating the image"
+              description: "The prompt to use for generating the image (must be in English)"
             },
             aspect_ratio: {
               type: "string",
@@ -63,7 +63,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             },
             negative_prompt: {
               type: "string",
-              description: "Description of what to exclude from the image"
+              description: "Description of what to exclude from the image (must be in English)"
             },
             num_images: {
               type: "number",
@@ -112,8 +112,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
             {
               type: "text",
               text: `Generated ${response.data.length} image(s):\n${response.data
-                .map((img) => img.url)
-                .join("\n")}`
+                .map((img) => `URL: ${img.url}\nSaved to: ${img.filepath}`)
+                .join("\n\n")}`
             }
           ]
         };
