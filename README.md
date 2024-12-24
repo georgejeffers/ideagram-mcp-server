@@ -20,6 +20,10 @@ Ideogram APIを使用して画像生成機能を提供するModel Context Protoc
 </div>
 
 
+https://github.com/user-attachments/assets/041553d3-6fbc-4dfa-b149-d195dcb9e8f8
+
+
+
 ## 📋 機能
 
 - プロンプトに基づく画像生成
