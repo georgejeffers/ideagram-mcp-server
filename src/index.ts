@@ -50,7 +50,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
             model: {
               type: "string",
               description: "The model to use for generation",
-              enum: ["V_1", "V_1_TURBO", "V_2", "V_2_TURBO"]
+              enum: ["V_1", "V_1_TURBO", "V_2", "V_2_TURBO", "V_3", "V_2A", "V_2A_TURBO"]
             },
             magic_prompt_option: {
               type: "string",
@@ -93,16 +93,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
       try {
         const params: IdeogramGenerateParams = {
           prompt: args.prompt,
-          aspect_ratio: typeof args.aspect_ratio === "string" ? args.aspect_ratio : undefined,
-          model: typeof args.model === "string" && ["V_1", "V_1_TURBO", "V_2", "V_2_TURBO"].includes(args.model) 
+          aspect_ratio: typeof args.aspect_ratio === "string" && ["ASPECT_1_1", "ASPECT_4_3", "ASPECT_3_4", "ASPECT_16_9", "ASPECT_9_16"].includes(args.aspect_ratio)
+            ? args.aspect_ratio
+            : 'ASPECT_3_4',
+          model: typeof args.model === "string" && ["V_1", "V_1_TURBO", "V_2", "V_2_TURBO", "V_3", "V_2A", "V_2A_TURBO"].includes(args.model)
             ? args.model as IdeogramGenerateParams["model"]
-            : undefined,
+            : 'V_2A',
           magic_prompt_option: typeof args.magic_prompt_option === "string" && ["AUTO", "ON", "OFF"].includes(args.magic_prompt_option)
             ? args.magic_prompt_option as IdeogramGenerateParams["magic_prompt_option"]
-            : undefined,
+            : 'ON',
           style_type: typeof args.style_type === "string" ? args.style_type : undefined,
           negative_prompt: typeof args.negative_prompt === "string" ? args.negative_prompt : undefined,
-          num_images: typeof args.num_images === "number" ? args.num_images : undefined,
+          num_images: typeof args.num_images === "number" && args.num_images >= 1 && args.num_images <= 8
+            ? args.num_images
+            : 1,
         };
 
         const response = await ideogramClient.generateImage(params);
